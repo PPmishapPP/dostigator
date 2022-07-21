@@ -8,10 +8,13 @@ import ru.mishapp.dostigator.dao.UserRepository;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
 public class UserAdd implements CommandHandler {
 
     private final UserRepository userRepository;
+
+    public UserAdd(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public List<SendMessage> handle(String message) {
